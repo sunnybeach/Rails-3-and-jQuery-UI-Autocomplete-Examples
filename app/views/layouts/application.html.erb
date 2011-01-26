@@ -16,15 +16,17 @@
   <%= csrf_meta_tag %>
 
 </head>
-<body id="body_background">
+<body>
   <div class="container">
     <div class="span-22 prepend-1 append-1">
       <hr class="space" />
+      
       <h3><%= link_to "Products", products_path%> | 
       <%= link_to "Categories", categories_path %> | 
       <%= link_to "Colors", colors_path%> | 
       <%= link_to "Manufacturers", manufacturers_path %>
       </h3>
+      
       <hr>
       <%= yield  %>
             

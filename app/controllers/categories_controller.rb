@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   # GET /categories.xml
   def index
     #CHANGES_HERE
-    if params[:term]
+    if params[:term] #CHANGES_HERE
       @categories = Category.where("name LIKE ?", "%#{params[:term]}%")
     #if using Heroku/Postgres you need ILIKE for case insensitive
     else

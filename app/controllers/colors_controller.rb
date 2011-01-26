@@ -2,7 +2,7 @@ class ColorsController < ApplicationController
   # GET /colors
   # GET /colors.xml
   def index
-    if params[:term]
+    if params[:term] #CHANGES_HERE
       @colors = Color.where("name LIKE ?", "%#{params[:term]}%")
     else
       @colors = Color.all

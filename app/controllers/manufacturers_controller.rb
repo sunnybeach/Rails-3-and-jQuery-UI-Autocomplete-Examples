@@ -2,7 +2,7 @@ class ManufacturersController < ApplicationController
   # GET /manufacturers
   # GET /manufacturers.xml
   def index
-    if params[:term]
+    if params[:term] #CHANGES_HERE
       @manufacturers = Manufacturer.where("name LIKE ?", "%#{params[:term]}%")
     else
       @manufacturers = Manufacturer.all

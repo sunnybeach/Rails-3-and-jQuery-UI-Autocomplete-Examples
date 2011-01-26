@@ -3,7 +3,7 @@ class Product < ActiveRecord::Base
   belongs_to :color
   belongs_to :manufacturer
   
-  #CHANGES_HERE
+  #CHANGES_HERE - lots
   
   def category_name
     category.name if category
