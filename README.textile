@@ -1,37 +1,37 @@
-h1. A few examples of jQueryUI Autocomplete and Rails 3
+h1. A few examples of jQueryUI Autocomplete and Rails 3. Specifically there are a few different examples of how to return json.
 
 To get this to work, download the this complete Rails 3 application. 
 
 Run the following commands to (hopefully) get the application running.
-
+<pre>
   bundle install
   rake db:migrate
   rake db:seed
   rails s
-
+</pre>
 
 Open a browser and add a new product. The category, color, and manufacturer names will autocomplete if there is a matching name. 
 
 To see some of the changes made, you can search for CHANGES_HERE throughout the application. 
 
+h2. How was this app created?
 
 The following commands were used to create the basic outline of the application. 
-
+<pre>
   rails new jQueryAutocompleteSample
   cd jQueryAutocompleteSample
   rails g scaffold category name:string 
   rails g scaffold color name:string 
   rails g scaffold manufacturer name:string 
   rails g scaffold product title:string description:text category_id:integer color_id:integer manufacturer_id:integer
-
+</pre>
 Open the project in your favorite editor
 go to db/seeds.rb - add some fake data 
 edit the routes.rb file
-
+<pre>
   rake db:migrate
   rake db:seed
   rm public/index.html
   rails s 
-
-numerous changes to the entire public folder, most importantly adding the current version of jQuery and jQueryUI
-changed config/application.rb, fixing the line config.action_view.javascript_expansions
+</pre>
+I also made numerous changes to the public folder, most importantly adding the current version of jQuery and jQueryUI along with BlueprintCSS.
