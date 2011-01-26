@@ -4,12 +4,11 @@ To get this to work, download the this complete Rails 3 application.
 
 Run the following commands to (hopefully) get the application running.
 
-@
-bundle install
-rake db:migrate
-rake db:seed
-rails s
-@
+  bundle install
+  rake db:migrate
+  rake db:seed
+  rails s
+
 
 Open a browser and add a new product. The category, color, and manufacturer names will autocomplete if there is a matching name. 
 
@@ -18,30 +17,21 @@ To see some of the changes made, you can search for CHANGES_HERE throughout the 
 
 The following commands were used to create the basic outline of the application. 
 
-rails new jQueryAutocompleteSample
-cd jQueryAutocompleteSample
-rails g scaffold category name:string 
-rails g scaffold color name:string 
-rails g scaffold manufacturer name:string 
-rails g scaffold product title:string description:text category_id:integer color_id:integer manufacturer_id:integer
+  rails new jQueryAutocompleteSample
+  cd jQueryAutocompleteSample
+  rails g scaffold category name:string 
+  rails g scaffold color name:string 
+  rails g scaffold manufacturer name:string 
+  rails g scaffold product title:string description:text category_id:integer color_id:integer manufacturer_id:integer
 
 Open the project in your favorite editor
 go to db/seeds.rb - add some fake data 
 edit the routes.rb file
-rake db:migrate
-rake db:seed
-rm public/index.html
-rails s 
+
+  rake db:migrate
+  rake db:seed
+  rm public/index.html
+  rails s 
 
 numerous changes to the entire public folder, most importantly adding the current version of jQuery and jQueryUI
 changed config/application.rb, fixing the line config.action_view.javascript_expansions
-belongs_to :category
-has_many :products
-
-
-def category_name
-  category.name if category
-end
-
-Edited the index action for Categories Controller
-Added a Categories View of index.js.erb
