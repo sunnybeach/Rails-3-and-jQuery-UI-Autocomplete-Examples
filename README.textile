@@ -4,10 +4,12 @@ To get this to work, download the this complete Rails 3 application.
 
 Run the following commands to (hopefully) get the application running.
 
+@
 bundle install
 rake db:migrate
 rake db:seed
 rails s
+@
 
 Open a browser and add a new product. The category, color, and manufacturer names will autocomplete if there is a matching name. 
 
