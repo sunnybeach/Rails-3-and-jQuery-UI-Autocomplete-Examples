@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%=controller.controller_name.titlecase%></title>
+
+  <%= stylesheet_link_tag 'screen' %>
+  <%= stylesheet_link_tag "print", :media => "print" %>
+  <%= stylesheet_link_tag 'application' %>
+  <!--[if lt IE 8]> <%= stylesheet_link_tag 'ie' %><![endif]-->
+  <%= javascript_include_tag :defaults %> 
+  <%= stylesheet_link_tag 'cupertino/jquery-ui-1.8.8.custom' %>
+  
+  <%= yield(:head) %>
+  
+  <%= csrf_meta_tag %>
+
+</head>
+<body id="body_background">
+  <div class="container">
+    <div class="span-22 prepend-1 append-1">
+      <hr class="space" />
+      <h3><%= link_to "Products", products_path%> | 
+      <%= link_to "Categories", categories_path %> | 
+      <%= link_to "Colors", colors_path%> | 
+      <%= link_to "Manufacturers", manufacturers_path %>
+      </h3>
+      <hr>
+      <%= yield  %>
+            
+      
+    </div><!--end span-24-->
+  </div><!--end container-->
+</body>
+</html>
+

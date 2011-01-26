@@ -1,0 +1,7 @@
+<% data = [] #CHANGES_HERE -%>
+<% for category in @categories -%>
+<% data << {:value => category.name} -%>
+<%end -%>
+<%=raw data.to_json %>
+
+

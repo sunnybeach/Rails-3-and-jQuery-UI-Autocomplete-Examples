@@ -1,0 +1,26 @@
+rails new jQueryAutocompleteSample
+cd jQueryAutocompleteSample
+rails g scaffold category name:string 
+rails g scaffold color name:string 
+rails g scaffold manufacturer name:string 
+rails g scaffold product title:string description:text category_id:integer color_id:integer manufacturer_id:integer
+Open the project in your favorite editor
+go to db/seeds.rb - add some fake Category data
+rake db:migrate
+rake db:seed
+rm public/index.html
+
+rails s 
+The text CHANGES_HERE indicate areas of code that were edited.
+numerous changes to the entire public folder, most importantly adding the current version of jQuery and jQueryUI
+changed config/application.rb, fixing the line config.action_view.javascript_expansions
+belongs_to :category
+has_many :products
+
+
+def category_name
+  category.name if category
+end
+
+Edited the index action for Categories Controller
+Added a Categories View of index.js.erb
